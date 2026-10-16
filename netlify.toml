@@ -1,0 +1,28 @@
+[build]
+  command = "yarn build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# The previous Squarespace site linked to these paths. The new site is a
+# single page, so keep the old URLs working by pointing them at sections.
+[[redirects]]
+  from = "/contact-us"
+  to = "/#contact"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/#about"
+  status = 301
+
+[[redirects]]
+  from = "/areas-of-practice"
+  to = "/#practice"
+  status = 301
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

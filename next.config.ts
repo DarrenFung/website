@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  // Fully static site: `next build` writes plain HTML/CSS/JS to `out/`, which
+  // Netlify serves directly. Redirects live in netlify.toml (unsupported here).
+  output: "export",
+  // No image server in a static export; images in public/ are pre-sized.
+  images: { unoptimized: true },
   reactCompiler: true,
   turbopack: {
     rules: {
@@ -11,15 +14,6 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
-  },
-  // The previous Squarespace site linked to these paths. The new site is a
-  // single page, so keep the old URLs working by pointing them at sections.
-  async redirects() {
-    return [
-      { source: "/contact-us", destination: "/#contact", permanent: true },
-      { source: "/about", destination: "/#about", permanent: true },
-      { source: "/areas-of-practice", destination: "/#practice", permanent: true },
-    ];
   },
 };
 
