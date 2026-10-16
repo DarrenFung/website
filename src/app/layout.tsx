@@ -44,7 +44,6 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: site.company,
   url: site.url,
-  email: site.email,
   description: site.description,
   founder: { "@type": "Person", name: site.name, jobTitle: "Fractional CTO" },
   areaServed: "Worldwide",

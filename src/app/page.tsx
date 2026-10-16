@@ -24,8 +24,8 @@ export default function Home() {
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-8 text-sm text-muted md:flex-row md:justify-between md:px-8">
           <p>{site.company}</p>
-          <a href={`mailto:${site.email}`} className="hover:text-fg">
-            {site.email}
+          <a href="#contact" className="hover:text-fg">
+            {site.contactLabel}
           </a>
         </div>
       </footer>

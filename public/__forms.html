@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <!--
+      Netlify Forms registers forms by scanning built HTML at deploy time and
+      cannot see the React-rendered form in src/components/contact-form.tsx.
+      This hidden skeleton registers it. Field names must match exactly.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="subject" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <input name="company" type="text" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
